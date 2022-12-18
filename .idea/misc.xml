@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android/IMK/app/src/main/res/layout/activity_login.xml" value="0.18" />
+        <entry key="..\:/android/IMK/app/src/main/res/drawable/bg_outline_radius.xml" value="0.142" />
+        <entry key="..\:/android/IMK/app/src/main/res/drawable/bg_rounded_button.xml" value="0.1" />
+        <entry key="..\:/android/IMK/app/src/main/res/drawable/bg_rounded_edittext.xml" value="0.142" />
+        <entry key="..\:/android/IMK/app/src/main/res/drawable/button_state_bg.xml" value="0.142" />
+        <entry key="..\:/android/IMK/app/src/main/res/layout/activity_absen.xml" value="0.2" />
+        <entry key="..\:/android/IMK/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/android/IMK/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/android/IMK/app/src/main/res/layout/custom_scanner.xml" value="0.19895833333333332" />
       </map>
     </option>
   </component>

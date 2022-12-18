@@ -20,24 +20,31 @@ class LoginActivity : AppCompatActivity() {
         //fullscreen
         controlWindowInsets(true)
 
-        binding.btnReset.setOnClickListener {
-            binding.etUserName.text.clear()
-            binding.etPassword.text.clear()
-        }
-
 //        binding.etUserName.setText("admin")
 //        binding.etPassword.setText("admin")
 
-        binding.btnSubmit.setOnClickListener {
-            val username = binding.etUserName.text.toString()
+        binding.btnSignIn.setOnClickListener {
+            val username = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            if (username == "admin" && password == "admin") {
-                startActivity(Intent(this, MainActivity::class.java))
-            } else {
-                binding.etUserName.error = "Username atau Password salah"
-                binding.etPassword.error = "Username atau Password salah"
+            when {
+                username == "mahasiswa" && password == "mahasiswa" -> {
+                    startActivity(Intent(this, AbsenActivity::class.java))
+                    binding.etEmail.text.clear()
+                    binding.etPassword.text.clear()
+                }
+                username == "dosen" && password == "dosen" -> {
+
+                }
             }
+//            if (username == "admin" && password == "admin") {
+//                startActivity(Intent(this, AbsenActivity::class.java))
+//                binding.etEmail.text.clear()
+//                binding.etPassword.text.clear()
+//            } else {
+//                binding.etEmail.error = "Username atau Password salah"
+//                binding.etPassword.error = "Username atau Password salah"
+//            }
         }
 
     }

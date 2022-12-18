@@ -1,9 +1,3 @@
-<!--
-    ini layout pembungkus untuk activity_login.xml
-    yang berisi 1 imageview, 1 textview, 2 edittext dan 1 button
-    biasanya layout ini disebut dengan layout root (akar)
--->
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -67,44 +61,70 @@
         text untuk menampilkan text biasa
         -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:padding="30dp"
-            android:text="Login"/>
-        <EditText
-            android:id="@+id/et_user_name"
-            android:hint="User Name"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/et_password"
-            android:hint="Password"
-            android:textAlignment="center"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="25dp"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_reset"
-                android:text="Reset"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/btn_submit"
-                android:text="Submit"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_marginTop="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:hint="Nama Pengguna"
+                android:paddingStart="35dp"
+                android:textColorHint="@color/black"
+                android:background="@drawable/button_state_bg"
+                tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/etPasswordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/etEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:autofillHints="name"
+                    android:paddingStart="35dp"
+                    android:hint="Kata Sandi"
+                    android:textColorHint="@color/black"
+                    android:background="@drawable/button_state_bg"
+                    android:inputType="textPassword"
+                    tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="login"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/bg_rounded_button"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

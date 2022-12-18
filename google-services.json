@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "816345999859",
+    "firebase_url": "https://imk-project-9b6c8-default-rtdb.firebaseio.com",
+    "project_id": "imk-project-9b6c8",
+    "storage_bucket": "imk-project-9b6c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816345999859:android:1f742c833fc57c55710a86",
+        "android_client_info": {
+          "package_name": "com.aplikasi.imk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816345999859-7ubtiec5q04j3fem2m7paaqladt7g1ta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsI0ABZnfSzoGOniX4T4-rYG-by1w0x9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816345999859-7ubtiec5q04j3fem2m7paaqladt7g1ta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
