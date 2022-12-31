@@ -1,5 +1,6 @@
 package com.aplikasi.imk
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
 
 class AbsenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAbsenBinding
@@ -27,6 +29,7 @@ class AbsenActivity : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAbsenBinding.inflate(layoutInflater)
@@ -53,9 +56,10 @@ class AbsenActivity : AppCompatActivity() {
             val nimValue = binding.etNIM.text.toString()
             val fakValue = binding.etFakultas.text.toString()
             val prodiValue = binding.etProdi.text.toString()
+            val jamAbsen = SimpleDateFormat("HH:mm:ss").format(System.currentTimeMillis())
 
             val absenId = dbRef.push().key.toString()
-            val absen = Absen(absenId, scanValue, namaValue, nimValue, fakValue, prodiValue)
+            val absen = Absen(absenId, scanValue, namaValue, nimValue, fakValue, prodiValue, jamAbsen)
 
             dbRef.child(absenId).setValue(absen)
                 .addOnCompleteListener {
@@ -64,6 +68,7 @@ class AbsenActivity : AppCompatActivity() {
                         "Data berhasil ditambahkan",
                         Snackbar.LENGTH_LONG)
                         .show()
+                    Log.d("berhasil", "Data berhasil ditambahkan")
                     binding.qrCode.text.clear()
                     binding.etNama.text.clear()
                     binding.etNIM.text.clear()

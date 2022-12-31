@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
                     binding.etPassword.text.clear()
                 }
                 username == "dosen" && password == "dosen" -> {
-
+                    startActivity(Intent(this, DosenActivity::class.java))
                 }
             }
 //            if (username == "admin" && password == "admin") {
