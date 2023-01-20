@@ -7,5 +7,7 @@ data class Absen(
     var nim: String? = null,
     var fakultas: String? = null,
     var prodi: String? = null,
-    var jamAbsen: String? = null
+    var jamAbsen: String? = null,
+    var latitude: String? = null,
+    var longitude: String? = null,
 )

@@ -36,15 +36,11 @@ class LoginActivity : AppCompatActivity() {
                 username == "dosen" && password == "dosen" -> {
                     startActivity(Intent(this, DosenActivity::class.java))
                 }
+                else -> {
+                    binding.etEmail.error = "Username atau Password salah"
+                    binding.etPassword.error = "Username atau Password salah"
+                }
             }
-//            if (username == "admin" && password == "admin") {
-//                startActivity(Intent(this, AbsenActivity::class.java))
-//                binding.etEmail.text.clear()
-//                binding.etPassword.text.clear()
-//            } else {
-//                binding.etEmail.error = "Username atau Password salah"
-//                binding.etPassword.error = "Username atau Password salah"
-//            }
         }
 
     }

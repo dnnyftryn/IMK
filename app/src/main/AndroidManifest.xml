@@ -20,6 +20,13 @@
         android:theme="@style/Theme.IMK"
         tools:targetApi="31">
         <activity
+            android:name=".MapsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DosenActivity"
             android:exported="false" />
         <activity

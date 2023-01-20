@@ -13,7 +13,6 @@ import com.aplikasi.firebaserealtimedatabse.adapter.AbsenAdapter
 import com.aplikasi.imk.databinding.ActivityDosenBinding
 import com.aplikasi.imk.model.Absen
 import com.google.firebase.database.*
-import com.google.firebase.database.R
 
 class DosenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDosenBinding
@@ -43,7 +42,6 @@ class DosenActivity : AppCompatActivity() {
 
     private fun getAbsentData() {
         dbRef = FirebaseDatabase.getInstance().getReference("Absent")
-
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 empList.clear()
@@ -57,7 +55,7 @@ class DosenActivity : AppCompatActivity() {
 
                     mAdapter.setOnItemClickListener(object : AbsenAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
-                            deleteRecord(empList[position].absenId)
+                            openMaps(empList[position].latitude , empList[position].longitude)
                         }
 
                     })
@@ -72,6 +70,17 @@ class DosenActivity : AppCompatActivity() {
 
         })
     }
+
+    private fun openMaps(latitude: String?, longitude: String?) {
+        Log.d("TAG", "openMaps: $latitude, $longitude")
+        val bundle = Bundle()
+        bundle.putDouble("latitude", latitude!!.toDouble())
+        bundle.putDouble("longitude", longitude!!.toDouble())
+        val intent = Intent(this, MapsActivity::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
+    }
+
 
     private fun deleteRecord(absenId: String?) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Absent").child(absenId!!)
